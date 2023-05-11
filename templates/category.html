@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}
+    {{ title }}
+{% endblock title %}
+{% block content %}
+{% for product in info %}
+<div class="card" style="width: 18rem; float: left; margin: 1rem">
+  <img src={{ product[1] }} class="card-img-top" style="height: 200px; padding: 3px">
+  <div class="card-body text-center">
+    <h5 class="card-title">Скидка {{ product[0] }}</h5>
+    <p class="card-text" style="height: 150px">{{ product[2] }}</p>
+    <p class="card-text"><h5><b>{{ product[4] }}р - {{ product[3] }}р</b></h5></p>
+    <a href={{ product[5] }} class="btn btn-primary">Перейти к товару</a>
+  </div>
+</div>
+{% endfor %}
+<h1>{{ inscr }}</h1>
+{% endblock content %}
